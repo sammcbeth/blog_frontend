@@ -1,0 +1,8 @@
+<div *ngIf="!selectedPost">
+  <app-post-list [posts]="posts" (selectPost)="selectPost($event)"></app-post-list>
+
+</div>
+<div *ngIf="selectedPost">
+  <app-post-details [selectedPost]="selectedPost"></app-post-details>
+  <button (click)="resetSelection()">this</button>
+</div>
