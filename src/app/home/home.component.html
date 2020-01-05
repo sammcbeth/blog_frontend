@@ -1,9 +1,13 @@
-<div class="col-12 mx-auto">
+<div *ngIf="!selected_author_data" class="col-12 mx-auto">
   <div class="author" *ngFor="let author of authors">
-    <app-author-detail [author]="author"></app-author-detail>
-  </div>
-</div>
+    <app-author-detail (passAuthor)="getAuthor($event)" [author]="author"></app-author-detail>
 
+  </div>
+
+</div>
+<div *ngIf="selected_author_data" class="author_section">
+  <app-author-page [author_data]="selected_author_data"></app-author-page>
+</div>
 
 
 <!-- 

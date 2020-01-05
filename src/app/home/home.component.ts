@@ -8,7 +8,8 @@ import { ApiService } from '../api.service'
 })
 export class HomeComponent implements OnInit {
   authors: any = [];
-  selectedauthor = null;
+  // is_author_selected: boolean = false;
+  selected_author_data: {};
 
   constructor(
     private apiService: ApiService
@@ -18,6 +19,16 @@ export class HomeComponent implements OnInit {
     this.apiService.getHome().subscribe(
       data => {
         this.authors = data;
+        console.log(data)
+      },
+      error => console.log(error)
+    );
+  }
+  getAuthor(author) {
+    // console.log(author.author.id)
+    this.apiService.getAuthor(author.author.id).subscribe(
+      data => {
+        this.selected_author_data = data;
         console.log(data)
       },
       error => console.log(error)

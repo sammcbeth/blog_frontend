@@ -1,2 +1,15 @@
-<img class="home_page_img" src="{{author.home_page_img}}" alt="home_page_img">
-<!-- <div [style.background-image]="'url({{author.home_page_img}})'" class="home_page_img"></div> -->
+<!-- <img class="home_page_img" src="{{author.home_page_img}}" alt="home_page_img"> -->
+<!-- <div [ngStyle]="{'background-imgae': url(author.home_page_img) }" class="background_img"></div> -->
+<div style="background-size: cover; background-repeat: no-repeat;"
+  [style.background-image]="'url(' + author.home_page_img + ')'" class="background_img">
+  <div class="author_bio">
+    <h1>{{author.get_author_name}}</h1>
+    <hr>
+    <p>{{author.bio}}</p>
+  </div>
+  <hr>
+
+  <a (click)="getAuthor(author)" class="brk-btn">
+    Visit Me
+  </a>
+</div>

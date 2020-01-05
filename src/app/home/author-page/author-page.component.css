@@ -1,29 +1,32 @@
-.background_img {
-  width: 100vw;
-  min-height: 55vh;
-  color: white;
-  text-align: center;
-  padding-top: 10vh;
+.list {
   padding-top: 5vh;
-
+  padding-bottom: 5vh;
 }
 
-
-
-.author_bio {
-  width: 50vw;
-  margin: auto;
-  transition: .75s;
-  padding-top: 4vh;
-  padding-bottom: 2vh;
-  padding-left: 2vh;
-  padding-right: 2vh;
+.post_img {
+  max-height: 45vh;
+  max-width: 45vw;
+  height: auto;
+  width: auto;
 }
 
-.author_bio:hover {
+.post {
+  margin-top: 5vh;
+
   background-color: rgba(15, 15, 15, .75);
+  color: white;
 }
 
+.card-body {
+
+  text-align: center;
+}
+
+
+.backgroundImg {
+  min-height: 100vh;
+  background-size: cover;
+}
 
 .brk-btn {
   position: relative;

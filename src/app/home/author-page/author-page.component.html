@@ -1,0 +1,21 @@
+<!-- <div *ngFor="let post of author_data.Posts">
+  <h1>{{post.title}}</h1>
+  <p>{{post.content}}</p>
+</div> -->
+<div style="background-size: cover; background-repeat: no-repeat;"
+  [style.background-image]="'url(' + author_data.author.blog_page_img + ')'" class="backgroundImg">
+
+  <a (click)="resetAuthor()" class="brk-btn">
+    Go Back To Home
+  </a>
+
+  <div class="col-12 col-md-6 mx-auto list">
+    <div class="card post" *ngFor="let post of author_data.Posts">
+      <img class="card-img-top img-class mx-auto border border-white post_img" src="{{post.image}}" alt="Image Failure">
+      <div class="card-body mx-auto">
+        <h2>{{post.title}}</h2>
+        <p>{{post.content}}</p>
+      </div>
+    </div>
+  </div>
+</div>
