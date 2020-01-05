@@ -6,13 +6,24 @@ import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
 import { HomeModule } from './home/home.module';
 import { AppComponent } from './app.component';
+import { MainComponent } from './main/main.component';
+import { HomeComponent } from './home/home.component';
+import { AuthorPageComponent } from './home/author-page/author-page.component';
+import { AuthorService } from './author.service';
 
 
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
+    component: MainComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'author',
+    component: AuthorPageComponent
   }
 ];
 
@@ -31,7 +42,7 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [AuthorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

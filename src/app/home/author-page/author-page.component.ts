@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ApiService } from '../../api.service'
+import { ApiService } from '../../api.service';
+import { AuthorService } from '../../author.service';
 
 @Component({
   selector: 'app-author-page',
@@ -10,15 +11,16 @@ export class AuthorPageComponent implements OnInit {
   @Input() author_data: {};
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private authorService: AuthorService
   ) { }
 
   ngOnInit() {
-
+    this.author_data = this.authorService.author_data;
   }
-  resetAuthor() {
-    this.author_data = null;
-    console.log(this.author_data)
-  }
+  // resetAuthor() {
+  //   this.author_data = null;
+  //   console.log(this.author_data)
+  // }
 
 }

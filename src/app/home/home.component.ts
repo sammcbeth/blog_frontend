@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service'
+import { AuthorService } from '../author.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,8 @@ export class HomeComponent implements OnInit {
   selected_author_data: {};
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private authorService: AuthorService
   ) { }
 
   ngOnInit() {
@@ -26,13 +28,8 @@ export class HomeComponent implements OnInit {
   }
   getAuthor(author) {
     // console.log(author.author.id)
-    this.apiService.getAuthor(author.author.id).subscribe(
-      data => {
-        this.selected_author_data = data;
-        console.log(data)
-      },
-      error => console.log(error)
-    );
+    this.authorService.getAuthor(author.author.id);
+
   }
 
 
