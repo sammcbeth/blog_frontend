@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
 import { AuthorPageComponent } from './home/author-page/author-page.component';
 import { AuthorService } from './author.service';
+import { ApiService } from './api.service';
 
 
 const routes: Routes = [
@@ -42,7 +43,7 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [AuthorService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [ApiService, AuthorService]
 })
 export class AppModule { }

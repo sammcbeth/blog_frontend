@@ -4,26 +4,20 @@ import { HomeComponent } from './home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { AuthorPageComponent } from './author-page/author-page.component'
+import { AuthorService } from '../author.service';
+import { ApiService } from '../api.service';
 
-const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'author',
-    component: AuthorPageComponent
-  }
-];
+
 
 @NgModule({
   declarations: [HomeComponent, AuthorDetailComponent, AuthorPageComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule
   ],
   exports: [
     RouterModule
-  ]
+  ],
+
 })
 export class HomeModule { }
