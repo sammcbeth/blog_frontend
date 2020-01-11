@@ -1,0 +1,75 @@
+.list {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.post_img {
+  max-height: 45vh;
+  max-width: 45vw;
+  height: auto;
+  width: auto;
+}
+
+.post {
+  margin-top: 5vh;
+
+  background-color: rgba(15, 15, 15, .75);
+  color: white;
+}
+
+.card-body {
+
+  text-align: center;
+}
+
+
+.backgroundImg {
+  min-height: 100vh;
+  background-size: cover;
+}
+
+.brk-btn {
+  position: relative;
+  background: none;
+  color: rgb(248, 248, 248);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid rgb(255, 255, 255);
+  padding: 0.5em 1em;
+}
+
+.brk-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #222;
+  height: 0.3em;
+  right: 20%;
+  top: -0.21em;
+  transform: skewX(-45deg);
+  -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #222;
+  height: 0.3em;
+  left: 20%;
+  bottom: -0.25em;
+  transform: skewX(45deg);
+  -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn:hover::before {
+  right: 80%;
+}
+
+.brk-btn:hover::after {
+  left: 80%;
+}

@@ -7,7 +7,7 @@ import { AuthorService } from '../../author.service';
   styleUrls: ['./author-detail.component.css']
 })
 export class AuthorDetailComponent implements OnInit {
-  @Input() author: object;
+  @Input() author: { id: number, home_page_img: string, get_author_name: string, bio: string };
   // @Output() passAuthor = new EventEmitter<{ author: object }>();
   // selected_author: {};
   constructor(private authorService: AuthorService) { }

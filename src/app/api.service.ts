@@ -6,9 +6,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
+  server = 'http://localhost:8000';
 
-  all_posts_url = 'http://localhost:8000/blog/posts/';
-  home_url = 'http://localhost:8000/blog/home/';
+  all_posts_url = this.server + '/blog/posts/';
+  home_url = this.server + '/blog/home/';
+  post_url = ''
   author_url = '';
   author_data = {}
 
@@ -30,8 +32,12 @@ export class ApiService {
   }
 
   getAuthor(author) {
-    this.author_url = 'http://localhost:8000/blog/home/' + author + '/get_author_page/';
+    this.author_url = this.server + '/blog/home/' + author + '/get_author_page/';
     return this.httpClient.get(this.author_url, { headers: this.headers })
 
+  }
+  getPost(slug) {
+    this.post_url = this.server + '/blog/posts/' + slug + '/get_post/';
+    return this.httpClient.get(this.post_url, { headers: this.headers })
   }
 }

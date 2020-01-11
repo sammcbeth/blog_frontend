@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostDetailsComponent implements OnInit {
   @Input() selectedPost = null;
-  @Input() post: object;
+  @Input() post: { title: string, user: number, content: string };
 
   constructor() { }
 

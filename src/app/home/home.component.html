@@ -1,7 +1,7 @@
 <!-- <button class="btn btn-info" (click)='getAuthor()'>this</button> -->
-<div *ngIf="!selected_author_data" class="col-12 mx-auto">
+<div class="col-12 mx-auto">
   <div class="author" *ngFor="let author of authors">
-    <app-author-detail (passAuthor)="getAuthor($event)" [author]="author"></app-author-detail>
+    <app-author-detail [author]="author"></app-author-detail>
 
   </div>
 

@@ -12,7 +12,7 @@
   <a routerLink="/author" (click)="getAuthor(author)" class="brk-btn">
     Visit Me
   </a>
-  <a (click)="getAuthor(author)" class="brk-btn">
+  <a [routerLink]="['/author', author.id]" class="brk-btn">
     Visit Me
   </a>
 </div>

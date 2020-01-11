@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthorPageComponent } from './home/author-page/author-page.component';
 import { AuthorService } from './author.service';
 import { ApiService } from './api.service';
+import { PostPageComponent } from './home/author-page/post-page/post-page.component';
 
 
 const routes: Routes = [
@@ -23,14 +24,19 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'author',
+    path: 'author/:id',
     component: AuthorPageComponent
+  },
+  {
+    path: 'author/:id/:slug',
+    component: PostPageComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    PostPageComponent,
   ],
   imports: [
     BrowserModule,
