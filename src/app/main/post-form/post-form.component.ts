@@ -3,6 +3,7 @@ import { ApiService } from 'src/app/api.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthorAdminComponent } from 'src/app/author-admin/author-admin.component';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-post-form',
@@ -12,7 +13,8 @@ import { Router } from '@angular/router';
 export class PostFormComponent implements OnInit {
 
   constructor(private apiService: ApiService,
-    private router: Router) { }
+    private router: Router,
+    private cookieService: CookieService) { }
 
   postForm = new FormGroup({
     author: new FormControl(''),
@@ -24,6 +26,11 @@ export class PostFormComponent implements OnInit {
   })
 
   ngOnInit() {
+    const authorToken = this.cookieService.get('author-token');
+    console.log(authorToken)
+    if (!authorToken) {
+      this.router.navigate(['/home'])
+    }
   }
 
   createPost() {
