@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { PostFormComponent } from './main/post-form/post-form.component';
 import { PostEditFormComponent } from './main/post-edit-form/post-edit-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PostDeleteFormComponent } from './main/post-delete-form/post-delete-form.component';
 
 
 const routes: Routes = [
@@ -51,7 +52,7 @@ const routes: Routes = [
   },
   {
     path: 'delete-post/:slug',
-    component: PostEditFormComponent
+    component: PostDeleteFormComponent
   }
 ];
 

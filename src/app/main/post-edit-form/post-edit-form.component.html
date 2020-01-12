@@ -1,24 +1,36 @@
 <div class="container">
-  <form [formGroup]="postForm" (ngSubmit)="editForm()">
+  <form (ngSubmit)="editPost(f)" #f="ngForm">
     <div class="form-group">
       <label for="title">Author</label>
-      <input type="text" class="form-control" id="author" value="{{post.Post.author_name}}">
+      <input type="text" class="form-control" [(ngModel)]="post.Post.author" name="author" id="author"
+        value="{{post.Post.author}}">
     </div>
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" class="form-control" formControlName="title" id="title" value="{{post.Post.title}}">
+      <input type="text" class="form-control" [(ngModel)]="post.Post.title" name="title" id="title"
+        value="{{post.Post.title}}">
     </div>
     <div class="form-group">
       <label for="content">Content</label>
       <!-- <input type="text" class="form-control" id="content" value="{{post.Post.content}}"> -->
-      <textarea class="form-control" formControlName="content" id="content" rows="3"
+      <textarea class="form-control" [(ngModel)]="post.Post.content" name="content" id="content" rows="3"
         value="{{post.Post.content}}"></textarea>
     </div>
     <div class="form-group">
       <label for="slug">Slug</label>
-      <input type="text" class="form-control" formControlName="slug" id="slug" value="{{post.Post.slug}}">
+      <input type="text" class="form-control" [(ngModel)]="post.Post.slug" name="slug" id="slug"
+        value="{{post.Post.slug}}">
     </div>
-    <button type="submit" class="btn btn-info">Edit
-      Post</button>
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="text" class="form-control" [(ngModel)]="post.Post.image" name="image" id="image"
+        value="{{post.Post.image}}">
+    </div>
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="text" class="form-control" ngModel name="password" id="password">
+    </div>
+    <button class="btn btn-success" type="submit">Save Edits</button>
+
   </form>
 </div>

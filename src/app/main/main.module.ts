@@ -10,6 +10,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { PostEditFormComponent } from './post-edit-form/post-edit-form.component';
+import { PostDeleteFormComponent } from './post-delete-form/post-delete-form.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
     PostListComponent,
     PostDetailsComponent,
     PostFormComponent,
-    PostEditFormComponent
+    PostEditFormComponent,
+    PostDeleteFormComponent
   ],
   imports: [
     CommonModule,

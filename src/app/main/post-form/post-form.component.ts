@@ -18,6 +18,7 @@ export class PostFormComponent implements OnInit {
     content: new FormControl(''),
     slug: new FormControl(''),
     image: new FormControl(''),
+    password: new FormControl('')
   })
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class PostFormComponent implements OnInit {
   createPost() {
 
     // console.log(data.author)
-    this.apiService.createPost(this.postForm.value.image, this.postForm.value.title, this.postForm.value.content, this.postForm.value.slug, +this.postForm.value.author).subscribe(
+    this.apiService.createPost(this.postForm.value.image, this.postForm.value.title, this.postForm.value.content, this.postForm.value.slug, +this.postForm.value.author, this.postForm.value.password).subscribe(
       result => console.log(result),
       err => console.log(err)
     );

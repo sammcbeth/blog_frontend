@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms'
+import { FormGroup, FormControl, NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-post-edit-form',
@@ -13,9 +13,12 @@ export class PostEditFormComponent implements OnInit {
   post: any;
 
   postForm = new FormGroup({
+    author: new FormControl(''),
     title: new FormControl(''),
     content: new FormControl(''),
-    slug: new FormControl('')
+    slug: new FormControl(''),
+    image: new FormControl(''),
+    password: new FormControl('')
   })
 
   constructor(private apiService: ApiService,
@@ -31,8 +34,16 @@ export class PostEditFormComponent implements OnInit {
     )
   }
 
-  editForm() {
-    console.log(this.postForm)
+  editPost(form: NgForm) {
+    this.apiService.updatePost(this.post.Post.id, form.control.value.image, form.control.value.title, form.control.value.content, form.control.value.slug, form.control.value.author, form.control.value.password).subscribe(
+      result => {
+        console.log(result);
+
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
 
 }
