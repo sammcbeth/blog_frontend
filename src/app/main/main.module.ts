@@ -8,6 +8,7 @@ import { ApiService } from '../api.service'
 import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { PostFormComponent } from './post-form/post-form.component';
+import { PostEditFormComponent } from './post-edit-form/post-edit-form.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     MainComponent,
     PostListComponent,
     PostDetailsComponent,
-    PostFormComponent
+    PostFormComponent,
+    PostEditFormComponent
   ],
   imports: [
     CommonModule,

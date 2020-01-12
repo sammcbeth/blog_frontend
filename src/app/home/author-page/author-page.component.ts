@@ -38,9 +38,12 @@ export class AuthorPageComponent implements OnInit {
     console.log(this.author_data);
   }
 
-  resetAuthor() {
-    // this.author_data = null;
-    console.log(this.author_data)
+  deletePost(post_slug) {
+    console.log(post_slug);
+  }
+
+  editPost(post_slug) {
+    console.log(post_slug);
   }
 
 }

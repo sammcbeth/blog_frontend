@@ -26,6 +26,7 @@
 .backgroundImg {
   min-height: 100vh;
   background-size: cover;
+  padding-bottom: 30px;
 }
 
 .brk-btn {
@@ -72,4 +73,53 @@
 
 .brk-btn:hover::after {
   left: 80%;
+}
+
+
+#comment-container {
+  border-top: 2px solid black;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .75);
+  color: white;
+  padding-bottom: 1vh;
+  max-width: 50vh;
+}
+
+textarea {
+  height: auto;
+  max-width: 600px;
+  color: #999;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  line-height: 2em;
+  border: none;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  -webkit-transition: height 2s ease;
+  -moz-transition: height 2s ease;
+  -ms-transition: height 2s ease;
+  -o-transition: height 2s ease;
+  transition: height 2s ease;
+}
+
+input {
+  color: #999;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  width: 60%;
+  background: #fff;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  -webkit-transition: height 2s ease;
+  -moz-transition: height 2s ease;
+  -ms-transition: height 2s ease;
+  -o-transition: height 2s ease;
+  transition: height 2s ease;
 }

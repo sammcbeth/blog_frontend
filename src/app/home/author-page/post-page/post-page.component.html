@@ -1,14 +1,29 @@
 <div style="background-size: cover; background-repeat: no-repeat;"
-  [style.background-image]="'url(' + author_data.author.blog_page_img + ')'" class="backgroundImg">
+  [style.background-image]="'url(' + author_data?.author.blog_page_img + ')'" class="backgroundImg">
 
   <div class="col-12 col-md-6 mx-auto list">
     <div class="card post">
-      <img class="card-img-top img-class mx-auto border border-white post_img" src="{{post.Post.image}}"
+      <img class="card-img-top img-class mx-auto border border-white post_img" src="{{post?.Post.image}}"
         alt="Image Failure">
       <div class="card-body mx-auto">
-        <h2>{{post.Post.title}}</h2>
-        <p>{{post.Post.content}}</p>
+        <h2>{{post?.Post.title}}</h2>
+        <p>{{post?.Post.content}}</p>
       </div>
     </div>
   </div>
+
+
+  <div id="comment-container" class="mx-auto">
+    <h2>Comment Section</h2>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div>
+        <input type="text" ngModel name="commentName" id="" placeholder="Name">
+        <hr>
+        <textarea placeholder="Comment" ngModel name="comment" id="comment" rows="5" cols="50"></textarea>
+        <hr>
+        <button class="brk-btn" type="submit">Submit Comment</button>
+      </div>
+    </form>
+  </div>
+  <button (click)="showCommentData()" class="brk-btn">Data</button>
 </div>

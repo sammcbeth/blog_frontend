@@ -1,0 +1,25 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="title">Author</label>
+      <input type="text" class="form-control" id="title" value="{{post.Post.author_name}}">
+    </div>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" value="{{post.Post.title}}">
+    </div>
+    <div class="form-group">
+      <label for="content">Content</label>
+      <!-- <input type="text" class="form-control" id="content" value="{{post.Post.content}}"> -->
+      <textarea class="form-control" id="content" rows="3">{{post.Post.content}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="slug">Slug</label>
+      <input type="text" class="form-control" id="slug" value="{{post.Post.slug}}">
+    </div>
+    <button [routerLink]="['/delete-post', post.slug]" (click)="deletePost(post.slug)" class="btn btn-danger">Delete
+      Post</button>
+    <button [routerLink]="['/edit-post', post.slug]" (click)="editPost(post.slug)" class="btn btn-info">Edit
+      Post</button>
+  </form>
+</div>

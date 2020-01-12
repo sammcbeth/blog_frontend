@@ -12,6 +12,11 @@ import { AuthorPageComponent } from './home/author-page/author-page.component';
 import { AuthorService } from './author.service';
 import { ApiService } from './api.service';
 import { PostPageComponent } from './home/author-page/post-page/post-page.component';
+import { AuthorAdminComponent } from './author-admin/author-admin.component';
+import { AuthorAdminModule } from './author-admin/author-admin.module'
+import { FormsModule } from '@angular/forms';
+import { PostFormComponent } from './main/post-form/post-form.component';
+import { PostEditFormComponent } from './main/post-edit-form/post-edit-form.component'
 
 
 const routes: Routes = [
@@ -30,6 +35,22 @@ const routes: Routes = [
   {
     path: 'author/:id/:slug',
     component: PostPageComponent
+  },
+  {
+    path: 'author-admin',
+    component: AuthorAdminComponent
+  },
+  {
+    path: 'new-post',
+    component: PostFormComponent
+  },
+  {
+    path: 'edit-post/:slug',
+    component: PostEditFormComponent
+  },
+  {
+    path: 'delete-post/:slug',
+    component: PostEditFormComponent
   }
 ];
 
@@ -40,9 +61,11 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AuthModule,
     MainModule,
     HomeModule,
+    AuthorAdminModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
   ],

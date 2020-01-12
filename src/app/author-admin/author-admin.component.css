@@ -1,3 +1,10 @@
+.login {
+  padding-top: 10vh;
+  max-width: 60vw;
+  min-height: 100vh;
+  background-color: teal;
+}
+
 .brk-btn {
   position: relative;
   background: none;

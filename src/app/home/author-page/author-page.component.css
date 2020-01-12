@@ -24,7 +24,10 @@
 
 
 .backgroundImg {
-  min-height: 100vh;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
 }
 
@@ -72,4 +75,8 @@
 
 .brk-btn:hover::after {
   left: 80%;
+}
+
+.authorButtons {
+  padding-top: 10px;
 }

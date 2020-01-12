@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+// import { url } from 'inspector';
 
 
 @Injectable({
@@ -10,8 +11,9 @@ export class ApiService {
 
   all_posts_url = this.server + '/blog/posts/';
   home_url = this.server + '/blog/home/';
-  post_url = ''
+  post_url = '';
   author_url = '';
+  commentUrl = this.server + '/blog/comments/';
   author_data = {}
 
   headers = new HttpHeaders({
@@ -39,5 +41,22 @@ export class ApiService {
   getPost(slug) {
     this.post_url = this.server + '/blog/posts/' + slug + '/get_post/';
     return this.httpClient.get(this.post_url, { headers: this.headers })
+  }
+
+  makeComment(name: string, comment: string, post_id: number) {
+    const body = JSON.stringify({ user: name, comment: comment, post: post_id });
+    return this.httpClient.post(this.commentUrl, body, { headers: this.headers })
+  }
+  getPostComments(post_id: number) {
+    const url = this.server + '/blog/comments/' + post_id + '/get_post_comments/'
+    return this.httpClient.get(url, { headers: this.headers })
+  }
+
+  editPost(post_slug: string, ) {
+
+  }
+
+  deletePost(post_slug: string, ) {
+
   }
 }
