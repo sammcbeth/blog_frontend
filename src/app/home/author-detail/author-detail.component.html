@@ -9,9 +9,7 @@
   </div>
   <hr>
 
-  <a routerLink="/author" (click)="getAuthor(author)" class="brk-btn">
-    Visit Me
-  </a>
+
   <a [routerLink]="['/author', author.id]" class="brk-btn">
     Visit Me
   </a>

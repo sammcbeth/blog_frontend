@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthorAdminComponent } from 'src/app/author-admin/author-admin.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-form',
@@ -10,7 +11,8 @@ import { AuthorAdminComponent } from 'src/app/author-admin/author-admin.componen
 })
 export class PostFormComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService,
+    private router: Router) { }
 
   postForm = new FormGroup({
     author: new FormControl(''),
@@ -31,5 +33,13 @@ export class PostFormComponent implements OnInit {
       result => console.log(result),
       err => console.log(err)
     );
+    if (+this.postForm.value.author in [1, 2, 3]) {
+      this.router.navigate(['/author', +this.postForm.value.author])
+
+    }
+    else {
+      this.router.navigate(['/home', +this.postForm.value.author])
+    }
+
   }
 }

@@ -1,1 +1,28 @@
-<p>post-delete-form works!</p>
+<div style="background-size: cover; background-repeat: no-repeat;"
+  [style.background-image]="'url(' + author_data?.author.blog_page_img + ')'" class="backgroundImg">
+
+
+  <div class="col-12 col-md-6 mx-auto list">
+    <div class="card post">
+      <img class="card-img-top img-class mx-auto border border-white post_img" src="{{post?.Post.image}}"
+        alt="Image Failure">
+      <div class="card-body mx-auto">
+        <h2>{{post?.Post.title}}</h2>
+        <p>{{post?.Post.content}}</p>
+
+        <div class="authorButtons" *ngIf="true">
+
+          <form (ngSubmit)="deletePost(f)" #f="ngForm">
+            <div class="form-group">
+              <label for="password">password</label>
+              <input type="text" class="form-control" ngModel name="password" id="password">
+            </div>
+            <button class="btn btn-danger" type="submit">Delete
+              Post</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

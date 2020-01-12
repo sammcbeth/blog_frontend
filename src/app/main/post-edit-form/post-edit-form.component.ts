@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, NgForm } from '@angular/forms'
 
 @Component({
@@ -22,7 +22,8 @@ export class PostEditFormComponent implements OnInit {
   })
 
   constructor(private apiService: ApiService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.post_slug = this.route.snapshot.params['slug'];
@@ -44,6 +45,7 @@ export class PostEditFormComponent implements OnInit {
         console.log(err);
       }
     )
+    this.router.navigate(['/author', form.control.value.author])
   }
 
 }

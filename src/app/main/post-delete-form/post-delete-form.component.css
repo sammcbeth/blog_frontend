@@ -1,0 +1,43 @@
+.background_img {
+  width: 100vw;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  padding-top: 10vh;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+
+
+.author_bio {
+  width: 50vw;
+  margin: auto;
+  transition: .75s;
+  padding-top: 4vh;
+  padding-bottom: 2vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+
+.post_img {
+  max-height: 40vh;
+}
+
+.post {
+  margin-top: 5vh;
+  background-color: rgba(15, 15, 15, .75);
+  color: white;
+}
+
+
+.card-body {
+
+  text-align: center;
+}
+
+.list {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  height: 100vh;
+}

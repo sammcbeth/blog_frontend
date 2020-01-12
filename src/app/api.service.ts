@@ -60,12 +60,8 @@ export class ApiService {
     return this.httpClient.put(`${this.all_posts_url}${id}/`, body, { headers: this.headers })
   }
 
-  // deletePost(slug: string, secret: string){
-  //   const body = JSON.stringify({ author: author, image: image, title: title, content: content, slug: slug });
-  //   return this.httpClient.post(this.all_posts_url, body, { headers: this.headers })
-  // }
-
-  // deletePost(post_slug: string, ) {
-
-  // }
+  deletePost(author_id: number, post_id: number, password: string) {
+    const body = JSON.stringify({ author_id: author_id, post_id: post_id, password: password });
+    return this.httpClient.post(`${this.all_posts_url}${post_id}/delete_post/`, body, { headers: this.headers })
+  }
 }
