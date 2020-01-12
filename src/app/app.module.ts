@@ -16,7 +16,8 @@ import { AuthorAdminComponent } from './author-admin/author-admin.component';
 import { AuthorAdminModule } from './author-admin/author-admin.module'
 import { FormsModule } from '@angular/forms';
 import { PostFormComponent } from './main/post-form/post-form.component';
-import { PostEditFormComponent } from './main/post-edit-form/post-edit-form.component'
+import { PostEditFormComponent } from './main/post-edit-form/post-edit-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -62,6 +63,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AuthModule,
     MainModule,
     HomeModule,

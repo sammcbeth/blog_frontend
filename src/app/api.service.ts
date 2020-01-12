@@ -51,12 +51,21 @@ export class ApiService {
     const url = this.server + '/blog/comments/' + post_id + '/get_post_comments/'
     return this.httpClient.get(url, { headers: this.headers })
   }
-
-  editPost(post_slug: string, ) {
-
+  createPost(image: string, title: string, content: string, slug: string, author: number) {
+    const body = JSON.stringify({ author: author, image: image, title: title, content: content, slug: slug });
+    return this.httpClient.post(this.all_posts_url, body, { headers: this.headers })
   }
 
-  deletePost(post_slug: string, ) {
+  // deletePost(slug: string, secret: string){
+  //   const body = JSON.stringify({ author: author, image: image, title: title, content: content, slug: slug });
+  //   return this.httpClient.post(this.all_posts_url, body, { headers: this.headers })
+  // }
 
-  }
+  // editPost(post_slug: string, ) {
+
+  // }
+
+  // deletePost(post_slug: string, ) {
+
+  // }
 }

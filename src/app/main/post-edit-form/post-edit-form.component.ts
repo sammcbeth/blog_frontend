@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms'
 
 @Component({
   selector: 'app-post-edit-form',
@@ -10,6 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 export class PostEditFormComponent implements OnInit {
   post_slug: string;
   post: any;
+
+  postForm = new FormGroup({
+    title: new FormControl(''),
+    content: new FormControl(''),
+    slug: new FormControl('')
+  })
 
   constructor(private apiService: ApiService,
     private route: ActivatedRoute) { }
@@ -24,11 +31,8 @@ export class PostEditFormComponent implements OnInit {
     )
   }
 
-  deletePost(post_slug) {
-
-  }
-  editPost(post_slug) {
-
+  editForm() {
+    console.log(this.postForm)
   }
 
 }
