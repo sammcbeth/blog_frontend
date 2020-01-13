@@ -22,9 +22,13 @@
 
 .post {
   margin-top: 5vh;
-  background-color: rgba(15, 15, 15, .85);
+  background-color: rgba(21, 21, 26, 0.85);
   color: white;
   transition: .75s;
+  -webkit-box-shadow: 10px 10px 3px 0px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow: 10px 10px 3px 0px rgba(0, 0, 0, 0.85);
+  box-shadow: 10px 10px 3px 0px rgba(0, 0, 0, 0.85);
+  padding: 10px;
 }
 
 .post:hover {
@@ -33,4 +37,50 @@
 
 .card-body {
   text-align: center;
+}
+
+.brk-btn {
+  position: relative;
+  background: none;
+  color: rgb(248, 248, 248);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid rgb(255, 255, 255);
+  padding: 0.5em 1em;
+}
+
+.brk-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #222;
+  height: 0.3em;
+  right: 20%;
+  top: -0.21em;
+  transform: skewX(-45deg);
+  -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #222;
+  height: 0.3em;
+  left: 20%;
+  bottom: -0.25em;
+  transform: skewX(45deg);
+  -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn:hover::before {
+  right: 80%;
+}
+
+.brk-btn:hover::after {
+  left: 80%;
 }

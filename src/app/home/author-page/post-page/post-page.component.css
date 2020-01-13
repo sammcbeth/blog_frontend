@@ -22,6 +22,9 @@
   text-align: center;
 }
 
+.card-text {
+  text-align: left;
+}
 
 .backgroundImg {
   min-height: 100%;
@@ -124,4 +127,8 @@ input {
   -ms-transition: height 2s ease;
   -o-transition: height 2s ease;
   transition: height 2s ease;
+}
+
+.angular-with-newlines {
+  white-space: pre-wrap;
 }

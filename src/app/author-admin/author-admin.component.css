@@ -50,3 +50,12 @@
 .brk-btn:hover::after {
   left: 80%;
 }
+
+.card {
+  background-color: black;
+  color: white;
+  width: 40vw;
+  margin: 10vh auto;
+  padding-top: 2vh;
+  padding-bottom: 3vh;
+}

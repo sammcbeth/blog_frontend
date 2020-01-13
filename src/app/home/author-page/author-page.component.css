@@ -12,15 +12,24 @@
 
 .post {
   margin-top: 5vh;
-
-  background-color: rgba(15, 15, 15, .75);
+  background-color: rgba(21, 21, 26, 0.85);
   color: white;
+  transition: .75s;
+  -webkit-box-shadow: 10px 10px 3px 0px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow: 10px 10px 3px 0px rgba(0, 0, 0, 0.85);
+  box-shadow: 10px 10px 3px 0px rgba(0, 0, 0, 0.85);
+  padding: 10px;
+}
+
+.post:hover {
+  background-color: rgba(15, 15, 15, 1);
 }
 
 .card-body {
 
   text-align: center;
 }
+
 
 
 .backgroundImg {

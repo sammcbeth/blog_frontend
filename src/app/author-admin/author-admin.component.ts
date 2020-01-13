@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 interface TokenObj {
   token: string;
@@ -15,7 +16,8 @@ interface TokenObj {
 export class AuthorAdminComponent implements OnInit {
 
   constructor(private apiService: ApiService,
-    private cookieService: CookieService) { }
+    private cookieService: CookieService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,6 +28,7 @@ export class AuthorAdminComponent implements OnInit {
       (result: TokenObj) => {
         console.log(result)
         this.cookieService.set('author-token', result.token);
+        this.router.navigate(['home'])
       },
       err => {
         console.log(err);

@@ -6,7 +6,7 @@
       <img class="card-img-top img-class mx-auto border border-white post_img" src="{{post.image}}" alt="Image Failure">
       <div class="card-body mx-auto">
         <app-post-details [post]="post"></app-post-details>
-
+        <button [routerLink]="['/author', post.author, post.slug]" class="brk-btn">View Post</button>
       </div>
     </div>
   </div>

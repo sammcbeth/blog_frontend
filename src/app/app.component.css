@@ -43,3 +43,11 @@
 .brk-btn:hover::after {
   left: 80%;
 }
+
+.navbar {
+  background-color: transparent;
+}
+
+.navbar:hover {
+  background-color: black;
+}

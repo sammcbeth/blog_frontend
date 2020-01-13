@@ -5,7 +5,7 @@
 <div style="background-size: cover; background-repeat: no-repeat;"
   [style.background-image]="'url(' + author_data.author.blog_page_img + ')'" class="backgroundImg">
 
-  <a [routerLink]="['/new-post']" *ngIf="true" class="brk-btn">
+  <a [routerLink]="['/new-post']" *ngIf="token" class="brk-btn">
     New Post
   </a>
 
@@ -14,9 +14,9 @@
       <img class="card-img-top img-class mx-auto border border-white post_img" src="{{post.image}}" alt="Image Failure">
       <div class="card-body mx-auto">
         <h2>{{post.title}}</h2>
-        <p>{{post.content}}</p>
+        <p>{{post.content | slice:0:400}}. . .</p>
         <button [routerLink]="['/author', author_data.author.id, post.slug]" class="brk-btn">View Post</button>
-        <div class="authorButtons" *ngIf="true">
+        <div class="authorButtons" *ngIf="token">
           <button [routerLink]="['/delete-post', post.slug]" (click)="deletePost(post.slug)"
             class="btn btn-danger">Delete Post</button>
           <button [routerLink]="['/edit-post', post.slug]" (click)="editPost(post.slug)" class="btn btn-info">Edit

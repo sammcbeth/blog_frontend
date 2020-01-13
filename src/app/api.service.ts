@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class ApiService {
-  server = 'http://localhost:8000';
+  server = 'https://blog-page-sf.herokuapp.com';
 
   all_posts_url = `${this.server}/blog/posts/`;
   home_url = `${this.server}/blog/home/`;
