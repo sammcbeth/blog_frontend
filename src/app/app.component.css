@@ -6,6 +6,7 @@
   text-decoration: none;
   border: 0.2em solid rgb(255, 255, 255);
   padding: 0.5em 1em;
+  border-radius: 10%;
 }
 
 .brk-btn::before {
@@ -50,4 +51,8 @@
 
 .navbar:hover {
   background-color: black;
+}
+
+.searchBar {
+  height: 2.8em;
 }

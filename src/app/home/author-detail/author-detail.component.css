@@ -70,3 +70,7 @@
 .brk-btn:hover::after {
   left: 80%;
 }
+
+.author {
+  overflow: auto;
+}

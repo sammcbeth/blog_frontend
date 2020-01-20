@@ -1,16 +1,17 @@
 <!-- <img class="home_page_img" src="{{author.home_page_img}}" alt="home_page_img"> -->
 <!-- <div [ngStyle]="{'background-imgae': url(author.home_page_img) }" class="background_img"></div> -->
 <div style="background-size: cover; background-repeat: no-repeat;"
-  [style.background-image]="'url(' + author.home_page_img + ')'" class="background_img">
+  [style.background-image]="'url(' + author.home_page_img + ')'" class="background_img author">
   <div class="author_bio">
     <h1>{{author.get_author_name}}</h1>
     <hr>
     <p>{{author.bio}}</p>
+
+    <hr>
+
+
+    <a [routerLink]="['/author', author.id]" class="brk-btn">
+      Visit Me
+    </a>
   </div>
-  <hr>
-
-
-  <a [routerLink]="['/author', author.id]" class="brk-btn">
-    Visit Me
-  </a>
 </div>
