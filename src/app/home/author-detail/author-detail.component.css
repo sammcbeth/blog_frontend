@@ -1,27 +1,39 @@
 .background_img {
-  width: 100vw;
-  min-height: 55vh;
+  width: 100%;
+  min-height: 45vh;
   color: white;
   text-align: center;
-  padding-top: 10vh;
-  padding-top: 5vh;
   background-attachment: fixed;
+  -webkit-box-shadow: 10px 10px 2px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 2px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 2px 0px rgba(0, 0, 0, 0.75);
 }
-
 
 
 .author_bio {
   width: 50vw;
   margin: auto;
   transition: .75s;
-  padding-top: 4vh;
-  padding-bottom: 2vh;
-  padding-left: 2vh;
-  padding-right: 2vh;
+
 }
 
-.author_bio:hover {
-  background-color: rgba(15, 15, 15, .75);
+
+.filter {
+
+  height: 100%;
+  width: 100%;
+  padding-top: 10vh;
+  padding-bottom: 7vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all .8s;
+}
+
+.filter:hover {
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 

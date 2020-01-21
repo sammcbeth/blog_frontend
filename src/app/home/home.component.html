@@ -1,11 +1,15 @@
 <!-- <button class="btn btn-info" (click)='getAuthor()'>this</button> -->
-<div class="col-12 mx-auto">
-  <div class="author" *ngFor="let author of authors">
-    <app-author-detail [author]="author"></app-author-detail>
+<div class="container-fluid">
+  <div class="row" *ngFor="let author of authors">
+
+    <div class="col-10 mx-auto author">
+      <app-author-detail [author]="author"></app-author-detail>
+
+    </div>
 
   </div>
-
 </div>
+
 <!-- <div *ngIf="selected_author_data" class="author_section">
   <app-author-page [author_data]="selected_author_data"></app-author-page>
 </div> -->
