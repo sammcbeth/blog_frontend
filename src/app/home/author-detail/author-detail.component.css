@@ -19,9 +19,10 @@
 
 
 .filter {
-
+  background-size: cover;
   height: 100%;
   width: 100%;
+  min-height: 45vh;
   padding-top: 10vh;
   padding-bottom: 7vh;
   padding-left: 2vh;
